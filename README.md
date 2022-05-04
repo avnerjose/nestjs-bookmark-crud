@@ -37,14 +37,18 @@ cd nodejs-message.io-backend && yarn
 1. Create .env and .env.test files with "DATABASE_URL", which should be and Postgres connection URL and JWT_SECRET that should be a random hash
    
 2. Run database container
-   ```bash
-   sudo docker-compose up
-   ```
-3. Run the server
-   ```bash
-   yarn start:dev
-   ```
-4. Make request to [localhost:3333]('http://localhost:3333') to test the api
+```bash
+docker-compose up
+```
+3. Run migrations
+```bash
+yarn prisma migrate dev
+```
+4. Run the server
+```bash
+yarn start:dev
+```
+5. Make request to [localhost:3333]('http://localhost:3333') to test the api
    
 
 ## Test
